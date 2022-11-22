@@ -5,36 +5,33 @@ const thankyou = document.querySelector(".thankyou");
 const realRate =document.querySelector(".choose");
 
 let ratingValue;
-let selected;
-choiceRate.addEventListener("click", function(e) {
+/*choiceRate.addEventListener("click", function(e) {
     let target = e.target;
     ratingValue = target.textContent;
     highlight(target);
-});
+});*/
 
-/*btns.forEach(function(btn) {
+btns.forEach(function(btn) {
     btn.addEventListener("clcik", function(e) {
+        removeHighlight();
         let target = e.currentTarget;
         ratingValue = target.textContent;
-        highlight(target)
+        target.classList.add("highlight");
+        thankyou.classList.remove("show-text");
     })
 });
-*/
-const highlight = (target) => {
-    if(selected){
-        selected.classList.remove('highlight');
-    }
-    selected = target;
-    selected.classList.add('highlight');
+
+const removeHighlight = () => {
+    btns.forEach(function(btn) {
+        if (btn.classList.contains("highlight")) {
+            btn.classList.remove("highlight");l
+        }
+    })
 }
 
 
 submit.addEventListener("click", function() {
-    if (thankyou.classList.contains("show-text")) {
-        thankyou.classList.remove("show-text");
-    }
-    else {
-        thankyou.classList.add("show-text");
-    }
-    realRate = ratingValue;
+    if (!ratingValue) return;
+    thankyou.classList.add("show-text");
+    realRate.textContent = ratingValue;
 });

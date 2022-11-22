@@ -123,9 +123,8 @@ body {
     display: block;
 }
 
-.show-text .thankyou {
+.thankyou.show-text {
     display: block;
-    position: fixed;
 }
 
 .show-text .main {
@@ -136,6 +135,6 @@ body {
   display: none;  
 }
 
-.highlight {
+.choice.highlight {
     background-color: var(--clr-primary);
 }
