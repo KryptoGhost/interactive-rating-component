@@ -32,6 +32,7 @@ body {
     background-color: var(--clr-neutral-400);
     padding: 15px;
     border-radius: 12px;
+    display: none;
 }
 
 .rating-center {
@@ -125,10 +126,6 @@ body {
 
 .thankyou.show-text {
     display: block;
-}
-
-.show-text .main {
-    display: none;
 }
 
 .thankyou {
